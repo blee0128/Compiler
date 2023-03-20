@@ -1,0 +1,9 @@
+
+float random()
+{
+}
+
+void emptier()
+{
+    ;
+}

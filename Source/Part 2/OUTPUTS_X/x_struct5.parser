@@ -1,0 +1,13 @@
+File x_struct5.c Line 2: global structpoint
+File x_struct5.c Line 3: member x
+File x_struct5.c Line 4: member y
+File x_struct5.c Line 5: member z
+File x_struct5.c Line 8: global structtriangle
+File x_struct5.c Line 9: member P
+File x_struct5.c Line 12: global variable camera_pos
+File x_struct5.c Line 13: global variable camera_pointing
+File x_struct5.c Line 14: global variable camera_up
+File x_struct5.c Line 16: function drawSurface
+File x_struct5.c Line 16: parameter S
+File x_struct5.c Line 16: parameter num_triangles
+File x_struct5.c Line 18: global variable buffer

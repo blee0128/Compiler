@@ -1,0 +1,17 @@
+File x_struct4.c Line 2: global structcoords
+File x_struct4.c Line 3: member x
+File x_struct4.c Line 3: member y
+File x_struct4.c Line 6: function writeMessage
+File x_struct4.c Line 6: parameter C
+File x_struct4.c Line 6: parameter message
+File x_struct4.c Line 8: function buildPoint
+File x_struct4.c Line 8: parameter a
+File x_struct4.c Line 8: parameter x
+File x_struct4.c Line 8: parameter y
+File x_struct4.c Line 10: local variable C
+File x_struct4.c Line 17: global structrectangle
+File x_struct4.c Line 18: member top_left
+File x_struct4.c Line 19: member bottom_right
+File x_struct4.c Line 22: function buildRect
+File x_struct4.c Line 22: parameter tl
+File x_struct4.c Line 22: parameter br

@@ -1,0 +1,7 @@
+File stmt3.c Line 2: function func1
+File stmt3.c Line 2: parameter x
+File stmt3.c Line 8: function func2
+File stmt3.c Line 8: parameter x
+File stmt3.c Line 13: function func3
+File stmt3.c Line 13: parameter x
+File stmt3.c Line 13: parameter y

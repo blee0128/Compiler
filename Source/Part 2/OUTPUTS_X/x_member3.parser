@@ -1,0 +1,4 @@
+File x_member3.c Line 2: function foo
+File x_member3.c Line 2: parameter a
+File x_member3.c Line 4: local variable x
+File x_member3.c Line 4: local variable y

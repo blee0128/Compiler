@@ -1,0 +1,12 @@
+File x_init1.c Line 2: global variable a
+File x_init1.c Line 3: global variable b
+File x_init1.c Line 4: global variable c
+File x_init1.c Line 6: global variable d
+File x_init1.c Line 6: global variable e
+File x_init1.c Line 6: global variable f
+File x_init1.c Line 6: global variable g
+File x_init1.c Line 6: global variable h
+File x_init1.c Line 6: global variable i
+File x_init1.c Line 8: global variable pi
+File x_init1.c Line 10: global variable H
+File x_init1.c Line 12: function main

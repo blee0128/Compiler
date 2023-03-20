@@ -1,0 +1,8 @@
+File x_struct3.c Line 2: global structS1
+File x_struct3.c Line 5: global structS2
+File x_struct3.c Line 6: member nothing
+File x_struct3.c Line 7: member something
+File x_struct3.c Line 10: global structS3
+File x_struct3.c Line 11: member first
+File x_struct3.c Line 12: member second
+File x_struct3.c Line 13: member third

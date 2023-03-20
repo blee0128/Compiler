@@ -941,6 +941,10 @@ def part2(outer_file_name):
             else:
                 return output_arr[temp_count][1]
         else:
+            # sys.stderr.write("Parser error in file {} line {} at text {}".format(
+            #     outer_file_name, str(output_arr[counter][0]), '(eof)'))
+            # sys.stderr.write("\n\tUnexpected {}".format('eof'))
+            # sys.exit(1)
             return None
 
     def lookCurrentGetLex():
@@ -967,7 +971,10 @@ def part2(outer_file_name):
             else:
                 return output_arr[temp_count][1]
         else:
-            return None
+            sys.stderr.write("Parser error in file {} line {} at text {}".format(
+                outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
+            sys.stderr.write("\n\tExpected {}".format('eof'))
+            sys.exit(1)
 
     # similar to lookAheadGetLex(), but instead look further ahead
     # will be used to check if it is a variable declaration or a function definition
@@ -1098,6 +1105,12 @@ def part2(outer_file_name):
                             outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
                         sys.stderr.write("\n\t Incorrect Global Variable Declaration")
                         sys.exit(1)
+                else:
+                    sys.stderr.write("Parser error in file {} line {} at text {}".format(
+                            outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
+                    sys.stderr.write("\n\t Expected ident")
+                    sys.exit(1)
+
 
     # local variable declaration
     # a type name followed by a comma-separated list of one or more identifiers
@@ -1153,6 +1166,11 @@ def part2(outer_file_name):
                             outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
                         sys.stderr.write("\n\t Incorrect Local Variable Declaration")
                         sys.exit(1)
+                else:
+                    sys.stderr.write("Parser error in file {} line {} at text {}".format(
+                            outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
+                    sys.stderr.write("\n\t Expected ident")
+                    sys.exit(1)
 
 
     # member variable declaration
@@ -1203,6 +1221,11 @@ def part2(outer_file_name):
                             outer_file_name, str(output_arr[counter][0]), output_arr[counter][1]))
                         sys.stderr.write("\n\t Incorrect Local Variable Declaration")
                         sys.exit(1)
+                else:
+                    sys.stderr.write("Parser error in file {} line {} at text {}".format(
+                            outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
+                    sys.stderr.write("\n\t Expected ident")
+                    sys.exit(1)
 
 
     # struct declaration
@@ -1223,6 +1246,9 @@ def part2(outer_file_name):
                     if lookAheadGetLex() == '}':
                         consumeToken()
                         # print("consume }")
+                        match(';')
+                        consumeToken()
+                        # print("consume ;")
                         return True
                     while True:
                         if lookAheadGetLex() == 'type':
@@ -1261,6 +1287,9 @@ def part2(outer_file_name):
                     if lookAheadGetLex() == '}':
                         consumeToken()
                         # print("consume }")
+                        match(';')
+                        consumeToken()
+                        # print("consume ;")
                         return True
                     while True:
                         if lookAheadGetLex() == 'type':
@@ -1357,8 +1386,14 @@ def part2(outer_file_name):
                         if lookAheadGetLex() == ',':
                             consumeToken()
                             # print("consume ,")
+                            continue
                         else:
                             break
+                    else:
+                        sys.stderr.write("Parser error in file {} line {} at text {}".format(
+                                outer_file_name, str(output_arr[counter+1][0]), output_arr[counter+1][1]))
+                        sys.stderr.write("\n\t Expected type name")
+                        sys.exit(1)
                 match(')')
                 consumeToken()
                 # print("consume )")
@@ -1434,7 +1469,7 @@ def part2(outer_file_name):
                 # ident(string || char)
                 elif lookAheadGetLex() == 'string' or lookAheadGetLex() == 'char':
                     consumeToken()
-                    # print("consume string or char")
+                    print("consume string or char")
                     if lookAheadGetLex() == ',':
                         consumeToken()
                         # print("consume ,")
@@ -1447,7 +1482,6 @@ def part2(outer_file_name):
                 else:
                     while True:
                         expression()
-                        # print("enter")
                         if lookAheadGetLex() == ',':
                             consumeToken()
                             # print("consume ,")
@@ -1471,8 +1505,11 @@ def part2(outer_file_name):
                 if lookAheadGetLex() == '.':
                     consumeToken()
                     # print("consume .")
-                    term()
-                    return True
+                    if lookAheadGetLex() == 'ident':
+                        term()
+                        return True
+                    else:
+                        match('ident')
                 if lookAheadGetLex() == '++' or lookAheadGetLex() == '--':
                     consumeToken()
                     # print("consume ++ or --")
@@ -1485,8 +1522,11 @@ def part2(outer_file_name):
             elif lookAheadGetLex() == '.':
                 consumeToken()
                 # print("consume .")
-                term()
-                return True
+                if lookAheadGetLex() == 'ident':
+                    term()
+                    return True
+                else:
+                    match('ident')
             # ident
             else:
                 # ident++ or ident--
@@ -1551,7 +1591,8 @@ def part2(outer_file_name):
                     return True
         # unary-operator exp
         elif lookAheadGetLex() == 'binary_op':
-            if output_arr[counter+1][1] == '-' and lookCurrentGetLex() != 'binary_op':
+            # if output_arr[counter+1][1] == '-' and lookCurrentGetLex() != 'binary_op':
+            if output_arr[counter+1][1] == '-':
                 consumeToken()
                 # print("consume unary operator")
                 expression()
@@ -1561,6 +1602,10 @@ def part2(outer_file_name):
             consumeToken()
             # print("consume unary operator")
             expression()
+            return True
+        elif lookAheadGetLex() == 'string' or lookAheadGetLex() == 'char':
+            consumeToken()
+            # print("consume string or char")
             return True
     
         sys.stderr.write("Parser error in file {} line {} at text {}".format(
@@ -1862,11 +1907,11 @@ def part2(outer_file_name):
     while check:
         if lookAheadGetLex() == 'const':
             consumeToken()
-            # print("consume const")
-            check = variableDeclaration()
+            print("consume const")
             continue
 
         if lookAheadGetLex() == 'type':
+            
             if lookExtraGetLex() == '(':
                 check = functionDefinition()
             elif output_arr[counter+1][1] == 'struct':

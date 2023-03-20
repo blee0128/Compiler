@@ -1,0 +1,13 @@
+File exprs7.c Line 4: function bar
+File exprs7.c Line 4: parameter a
+File exprs7.c Line 6: local variable b
+File exprs7.c Line 7: local variable c
+File exprs7.c Line 15: function flip
+File exprs7.c Line 15: parameter a
+File exprs7.c Line 20: function dist
+File exprs7.c Line 20: parameter x1
+File exprs7.c Line 20: parameter y1
+File exprs7.c Line 20: parameter z1
+File exprs7.c Line 22: local variable x2
+File exprs7.c Line 22: local variable y2
+File exprs7.c Line 22: local variable z2

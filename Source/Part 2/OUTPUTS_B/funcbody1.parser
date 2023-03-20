@@ -1,0 +1,7 @@
+File funcbody1.c Line 2: function proto1
+File funcbody1.c Line 5: local variable a
+File funcbody1.c Line 9: function proto2
+File funcbody1.c Line 9: parameter a
+File funcbody1.c Line 12: local variable b
+File funcbody1.c Line 14: local variable c
+File funcbody1.c Line 16: local variable d

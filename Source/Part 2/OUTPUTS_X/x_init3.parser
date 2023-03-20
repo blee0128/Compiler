@@ -1,0 +1,11 @@
+File x_init3.c Line 2: function foo
+File x_init3.c Line 2: parameter a
+File x_init3.c Line 4: local variable b
+File x_init3.c Line 6: local variable c
+File x_init3.c Line 6: local variable d
+File x_init3.c Line 6: local variable e
+File x_init3.c Line 6: local variable f
+File x_init3.c Line 6: local variable g
+File x_init3.c Line 10: function bar
+File x_init3.c Line 10: parameter b
+File x_init3.c Line 12: local variable c

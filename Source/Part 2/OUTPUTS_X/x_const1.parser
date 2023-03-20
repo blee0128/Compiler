@@ -1,0 +1,6 @@
+File x_const1.c Line 2: global variable pi
+File x_const1.c Line 4: global variable e
+File x_const1.c Line 7: function thing
+File x_const1.c Line 7: parameter x
+File x_const1.c Line 9: local variable a
+File x_const1.c Line 10: local variable b

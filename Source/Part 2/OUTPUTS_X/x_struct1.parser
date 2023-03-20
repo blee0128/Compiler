@@ -1,0 +1,10 @@
+File x_struct1.c Line 2: global structpoint
+File x_struct1.c Line 3: member x
+File x_struct1.c Line 3: member y
+File x_struct1.c Line 6: function foo
+File x_struct1.c Line 6: parameter a
+File x_struct1.c Line 8: local structinner
+File x_struct1.c Line 9: member b
+File x_struct1.c Line 9: member c
+File x_struct1.c Line 9: member d
+File x_struct1.c Line 11: local variable e

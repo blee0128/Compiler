@@ -1,0 +1,22 @@
+File x_struct6.c Line 2: global structpair
+File x_struct6.c Line 3: member x
+File x_struct6.c Line 4: member y
+File x_struct6.c Line 7: global variable p1
+File x_struct6.c Line 7: global variable p2
+File x_struct6.c Line 7: global variable p3
+File x_struct6.c Line 9: global structquadrilateral
+File x_struct6.c Line 10: member p1
+File x_struct6.c Line 10: member p2
+File x_struct6.c Line 10: member p3
+File x_struct6.c Line 10: member p4
+File x_struct6.c Line 13: function is_convex
+File x_struct6.c Line 13: parameter q
+File x_struct6.c Line 15: function center
+File x_struct6.c Line 15: parameter q
+File x_struct6.c Line 17: function quad_area
+File x_struct6.c Line 17: parameter q
+File x_struct6.c Line 19: local structtriangle
+File x_struct6.c Line 20: member p1
+File x_struct6.c Line 20: member p2
+File x_struct6.c Line 20: member p3
+File x_struct6.c Line 23: local variable T
