@@ -1,4 +1,4 @@
-##PART 0
+## PART 0
 
 How to build and run the compiler
 
@@ -24,7 +24,7 @@ How to build and run the documentation
 
 
 
-##PART 1
+## PART 1
 
 How to build and run the compiler
 
@@ -53,7 +53,7 @@ Features implemented
 - Basic Lever features implemented
 - All Extra features implemented
 
-##PART 2
+## PART 2
 
 How to build and run the compiler
 
